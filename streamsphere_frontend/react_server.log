@@ -19,3 +19,13 @@ To create a production build, use npm run build.
 
 webpack compiled successfully
 Compiling...
+Failed to compile.
+
+Module not found: Error: Can't resolve './components/MainContainer' in '/home/kavia/workspace/code-generation/streamsphere-9624-e3ea2b77/streamsphere_frontend/src'
+ERROR in ./src/App.js 6:0-55
+Module not found: Error: Can't resolve './components/MainContainer' in '/home/kavia/workspace/code-generation/streamsphere-9624-e3ea2b77/streamsphere_frontend/src'
+
+webpack compiled with 1 error
+Compiling...
+Compiled successfully!
+webpack compiled successfully
