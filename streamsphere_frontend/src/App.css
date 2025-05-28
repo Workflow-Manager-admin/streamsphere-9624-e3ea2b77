@@ -1,28 +1,44 @@
 :root {
-  --kavia-orange: #E87A41;
-  --kavia-dark: #1A1A1A;
-  --text-color: #ffffff;
-  --text-secondary: rgba(255, 255, 255, 0.7);
-  --border-color: rgba(255, 255, 255, 0.1);
+  /* StreamSphere Brand Colors */
+  --primary-color: #181818;
+  --secondary-color: #282828;
+  --accent-color: #E50914;
+
+  /* Cinematic Dark Theme Basics */
+  --background-main: var(--primary-color);
+  --background-secondary: var(--secondary-color);
+  --text-main: #fff;
+  --text-secondary: rgba(255,255,255,0.74);
+
+  /* Utility colors for UI elements */
+  --border-color: rgba(255,255,255,0.1);
+
+  /* Accent colors for highlights, buttons, and active elements */
+  --accent-contrast: #fff;
 }
 
 body {
   margin: 0;
   font-family: 'Inter', 'Roboto', 'Helvetica', 'Arial', sans-serif;
-  background-color: var(--kavia-dark);
-  color: var(--text-color);
+  background: var(--background-main);
+  color: var(--text-main);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
 }
 
+/* Core container layout */
 .app {
   min-height: 100vh;
+  background: var(--background-main);
+  color: var(--text-main);
   display: flex;
   flex-direction: column;
 }
 
+/* Navbar with secondary background */
 .navbar {
-  background-color: var(--kavia-dark);
+  background: var(--background-secondary);
   padding: 16px;
   display: flex;
   align-items: center;
@@ -35,6 +51,7 @@ body {
   z-index: 100;
 }
 
+/* Logo uses accent */
 .logo {
   font-size: 1.25rem;
   font-weight: 600;
@@ -44,7 +61,7 @@ body {
 }
 
 .logo-symbol {
-  color: var(--kavia-orange);
+  color: var(--accent-color);
 }
 
 .container {
@@ -65,8 +82,9 @@ body {
   gap: 24px;
 }
 
+/* Subtitle highlights with accent */
 .subtitle {
-  color: var(--kavia-orange);
+  color: var(--accent-color);
   font-weight: 500;
   font-size: 1.1rem;
 }
@@ -86,9 +104,10 @@ body {
   margin-bottom: 16px;
 }
 
+/* Primary action buttons */
 .btn {
-  background-color: var(--kavia-orange);
-  color: white;
+  background: var(--accent-color);
+  color: var(--accent-contrast);
   border: none;
   border-radius: 4px;
   padding: 10px 20px;
@@ -99,10 +118,14 @@ body {
 }
 
 .btn:hover {
-  background-color: #FF8B4D;
+  background-color: #b00610; /* Slightly deeper accent on hover */
 }
 
 .btn-large {
   padding: 12px 24px;
   font-size: 1.1rem;
 }
+
+/* Remove old variables/classes using Kavia palette.
+   The new palette ensures palette and theme consistency app-wide.
+*/
