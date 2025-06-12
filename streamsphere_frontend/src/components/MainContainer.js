@@ -1,6 +1,6 @@
 import React from 'react';
 import Navbar from './Navbar';
-import Carousel from './Carousel';
+import BannerSlider from './BannerSlider';
 import SectionList from './SectionList';
 
 // PUBLIC_INTERFACE
@@ -17,7 +17,7 @@ function MainContainer() {
     <>
       <Navbar />
       <main style={{ marginTop: 88, minHeight: '100vh', background: 'var(--background-main)', color: 'var(--text-main)' }}>
-        <Carousel />
+        <BannerSlider />
         <div className="container" style={{ display: 'flex', flexDirection: 'column', gap: 56 }}>
           <SectionList title="Trending Now" />
           <SectionList title="Recommended For You" />
