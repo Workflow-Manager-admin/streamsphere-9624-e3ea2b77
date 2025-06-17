@@ -6,19 +6,52 @@ import SectionList from './SectionList';
 // PUBLIC_INTERFACE
 function MainContainer() {
   /**
-   * MainContainer is the top-level layout for StreamSphere's home page.
-   * Now composed using the key feature components: Navbar, Carousel, SectionList.
-   * - Navbar at the top (includes logo, SearchBar, ProfileIcon).
-   * - Carousel for featured content.
-   * - SectionList for: Trending Now, Recommended For You, New Releases.
-   * All layouts use StreamSphere's dark theme and style palette.
+   * MainContainer is the top-level layout for StreamSphere's home page, 
+   * styled and structured to closely match the latest design reference. 
+   * This version features a fixed nav, contained hero area (carousel), and visually separated 
+   * horizontal sections for trending/recommended/new content.
    */
   return (
     <>
       <Navbar />
-      <main style={{ marginTop: 88, minHeight: '100vh', background: 'var(--background-main)', color: 'var(--text-main)' }}>
-        <Carousel />
-        <div className="container" style={{ display: 'flex', flexDirection: 'column', gap: 56 }}>
+      <main
+        style={{
+          marginTop: 72,
+          minHeight: '100vh',
+          background: 'var(--background-main)',
+          color: 'var(--text-main)',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          paddingBottom: 40,
+        }}
+      >
+        <div
+          style={{
+            width: '100%',
+            maxWidth: 980,
+            margin: '0 auto',
+            boxSizing: 'border-box',
+            padding: '0 16px',
+            // Aligns with new design visual margins
+          }}
+        >
+          <Carousel />
+        </div>
+        <div
+          className="container"
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 48,
+            width: '100%',
+            maxWidth: 980,
+            margin: '0 auto',
+            boxSizing: 'border-box',
+            padding: '0 12px 0 12px',
+            position: 'relative',
+          }}
+        >
           <SectionList title="Trending Now" />
           <SectionList title="Recommended For You" />
           <SectionList title="New Releases" />
