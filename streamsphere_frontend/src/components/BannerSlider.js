@@ -12,21 +12,21 @@ function BannerSlider() {
       title: "Blockbuster Hit",
       subtitle: "StreamSphere Originals",
       description: "A thrilling adventure. Now streaming.",
-      image: "https://dummyimage.com/1120x520/171717/fff&text=Blockbuster+Hit",
+      image: "https://dummyimage.com/1600x650/191919/fff&text=Blockbuster+Hit",
       cta: "Watch Now",
     },
     {
       title: "Epic Drama",
       subtitle: "Critically Acclaimed",
       description: "Dive into a world of emotion and intrigue.",
-      image: "https://dummyimage.com/1120x520/282828/fff&text=Epic+Drama",
+      image: "https://dummyimage.com/1600x650/232323/fff&text=Epic+Drama",
       cta: "Play",
     },
     {
       title: "Family Favourites",
       subtitle: "Top Picks for All",
       description: "Fun for everyone—see trending new series.",
-      image: "https://dummyimage.com/1120x520/111/fff&text=Family+Favourites",
+      image: "https://dummyimage.com/1600x650/111/fff&text=Family+Favourites",
       cta: "Browse Family",
     },
   ];
@@ -62,13 +62,13 @@ function BannerSlider() {
       style={{
         position: "absolute",
         top: "50%",
-        [dir]: 32,
+        [dir]: 46,
         transform: "translateY(-50%)",
-        background: "rgba(20,20,20,0.38)",
+        background: "rgba(12,12,12,0.47)",
         border: "none",
         borderRadius: "50%",
-        width: 48,
-        height: 48,
+        width: 52,
+        height: 52,
         cursor: "pointer",
         zIndex: 6,
         display: "flex",
@@ -76,28 +76,29 @@ function BannerSlider() {
         justifyContent: "center",
         transition: "background 0.18s",
         fontSize: 0,
-        boxShadow: "0 2px 20px rgba(0,0,0,0.18)",
+        boxShadow: "0 1.5px 18px 0 #000a",
+        outline: "none",
       }}
       onClick={onClick}
       onKeyDown={(e) => (e.key === "Enter" || e.key === " " ? onClick() : null)}
     >
       {/* Simple left/right arrow SVG */}
       {dir === "left" ? (
-        <svg width="26" height="26" fill="none">
+        <svg width="28" height="28" fill="none">
           <path
-            d="M16 21L8.75 13L16 5"
+            d="M18 23L9.75 14L18 5"
             stroke="#fff"
-            strokeWidth="2.8"
+            strokeWidth="3"
             strokeLinecap="round"
             strokeLinejoin="round"
           />
         </svg>
       ) : (
-        <svg width="26" height="26" fill="none">
+        <svg width="28" height="28" fill="none">
           <path
-            d="M10 5L17.25 13L10 21"
+            d="M10 5L18.25 14L10 23"
             stroke="#fff"
-            strokeWidth="2.8"
+            strokeWidth="3"
             strokeLinecap="round"
             strokeLinejoin="round"
           />
@@ -112,23 +113,24 @@ function BannerSlider() {
       tabIndex={0}
       onKeyDown={handleKeyDown}
       style={{
-        marginTop: 76,
+        marginTop: 74,
         width: "100%",
-        minHeight: 400,
-        maxHeight: 600,
-        background: "#141414",
+        minHeight: 490,
+        maxHeight: 650,
+        background: "#151515",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
         position: "relative",
         overflow: "hidden",
         transition: "background 0.44s cubic-bezier(0.22, 0.68, 0.44, 1)",
-        boxShadow: "0 10px 35px 0 #0008, 0 1px 0 #2228",
-        borderBottom: "2.5px solid var(--accent-color)",
+        boxShadow: "0 16px 44px 0 #000b, 0 2px 0 #2829",
+        borderBottom: "3.7px solid var(--accent-color)",
+        borderTop: "0.5px solid #222",
       }}
       aria-label="featured carousel"
     >
-      {/* Banner-wide vertical dark-to-transparent gradient overlay */}
+      {/* Background "cinematic" vertical gradient (dark to transparent bottom) */}
       <div
         style={{
           position: "absolute",
@@ -136,13 +138,28 @@ function BannerSlider() {
           right: 0,
           top: 0,
           bottom: 0,
-          zIndex: 2,
+          zIndex: 3,
           background:
-            "linear-gradient(to bottom, rgba(24,24,24,0.84) 0%, rgba(24,24,24,0.46) 34%, rgba(24,24,24,0.10) 78%, transparent 100%)",
+            "linear-gradient(180deg, #181818 0%, rgba(24,24,24,0.47) 35%, rgba(30,30,30,0.12) 70%, transparent 100%)",
         }}
         aria-hidden="true"
       />
-      {/* Edge accent */}
+      {/* Very subtle bottom-shadow vignette */}
+      <div
+        aria-hidden="true"
+        style={{
+          position: "absolute",
+          left: 0,
+          right: 0,
+          bottom: 0,
+          height: 90,
+          zIndex: 4,
+          background:
+            "linear-gradient(0deg,rgba(28,28,28,0.98) 2%,rgba(28,28,28,0.48) 48%,rgba(28,28,28,0) 95%)",
+          pointerEvents: "none",
+        }}
+      />
+      {/* Bright left vertical accent edge (tighter Netflix style) */}
       <div
         aria-hidden="true"
         style={{
@@ -150,16 +167,16 @@ function BannerSlider() {
           left: 0,
           top: 0,
           height: "100%",
-          width: 18,
+          width: 9,
           background: "var(--accent-color)",
-          opacity: 0.19,
-          borderRadius: "0 22px 22px 0",
-          filter: "blur(4px)",
-          boxShadow: "10px 0 44px 1px var(--accent-color)",
-          zIndex: 4,
+          opacity: 0.24,
+          borderRadius: "0 22px 18px 0",
+          filter: "blur(11px)",
+          boxShadow: "8px 0 46px 1px var(--accent-color)",
+          zIndex: 5,
         }}
       />
-      {/* Slide image with a *horizontal* dark fade overlay */}
+      {/* Slide image/full hero background */}
       <div
         style={{
           position: "absolute",
@@ -175,19 +192,19 @@ function BannerSlider() {
           draggable={false}
           style={{
             width: "100%",
-            minHeight: 340,
-            maxHeight: 540,
+            minHeight: 480,
+            maxHeight: 640,
             objectFit: "cover",
-            objectPosition: "55% 50%",
+            objectPosition: "52% 40%",
             filter:
-              "brightness(0.72) contrast(1.07) saturate(1.17) blur(0.2px)",
+              "brightness(0.59) contrast(1.09) saturate(1.20) blur(0.2px)",
             transition: "filter 0.13s",
             userSelect: "none",
             pointerEvents: "none",
             display: "block",
           }}
         />
-        {/* Cinematic horizontal fade */}
+        {/* Netflix-style horizontal fade */}
         <div
           style={{
             position: "absolute",
@@ -196,14 +213,14 @@ function BannerSlider() {
             right: 0,
             bottom: 0,
             background:
-              "linear-gradient(90deg, rgba(24,24,24, 0.98) 0%, rgba(24,24,24,0.83) 16%, rgba(24,24,24,0.14) 51%, rgba(24,24,24, 0.86) 99%)",
+              "linear-gradient(90deg, #191919 10%, rgba(24,24,24,0.88) 22%, rgba(24,24,24, 0.13) 56%, rgba(24,24,24, 0.82) 98%)",
             zIndex: 2,
             pointerEvents: "none",
           }}
         />
       </div>
 
-      {/* Main content row */}
+      {/* Main content row: precise vertical/horizontal Netflix-style layout */}
       <div
         className="container"
         style={{
@@ -211,22 +228,23 @@ function BannerSlider() {
           alignItems: "flex-end",
           gap: 0,
           position: "relative",
-          zIndex: 5,
+          zIndex: 10,
           width: "100%",
-          padding: "0 0 0 40px",
-          maxWidth: 1180,
-          minHeight: 340,
+          padding: "0 0 0 68px",
+          maxWidth: 1330,
+          minHeight: 440,
+          height: "calc(51vw + 68px)",
           justifyContent: "flex-start",
         }}
       >
-        {/* Hero text column */}
+        {/* Hero text column — Netflix style */}
         <div
           style={{
             display: "flex",
             flexDirection: "column",
-            maxWidth: 490,
+            maxWidth: 520,
             minWidth: 320,
-            padding: "0 0 52px 0",
+            padding: "0 0 72px 0",
             gap: 0,
             alignItems: "flex-start",
           }}
@@ -235,16 +253,16 @@ function BannerSlider() {
             style={{
               color: "var(--accent-color)",
               fontWeight: 700,
-              fontSize: "1.17rem",
-              letterSpacing: "2.3px",
-              background: "rgba(24,24,24,0.19)",
+              fontSize: "1.25rem",
+              letterSpacing: "2.6px",
+              background: "rgba(14,13,13,0.18)",
               textTransform: "uppercase",
-              borderRadius: 14,
-              padding: "4.5px 18px 4.5px 0",
-              marginBottom: 12,
-              boxShadow: "0 2px 10px 0 rgba(229,9,20,0.10)",
+              borderRadius: 18,
+              padding: "7px 28px 7px 4px",
+              marginBottom: 13,
+              boxShadow: "0 2px 12px 0 rgba(229,9,20,0.21)",
               textShadow:
-                "0 2.4px 12px #800c1466, 0 0.5px 2.3px #111d",
+                "0 1.2px 14px #ad0c1266, 0 0.5px 2.3px #221d",
             }}
           >
             {slides[current].subtitle}
@@ -253,13 +271,13 @@ function BannerSlider() {
             style={{
               color: "#fff",
               fontWeight: 900,
-              fontSize: "3.18rem",
-              margin: "0 0 9px -2.5px",
-              letterSpacing: "0.8px",
+              fontSize: "3.85rem",
+              margin: "0 0 12px -2.5px",
+              letterSpacing: "0.7px",
               textShadow:
-                "0 5px 36px #000c,0 1.5px 3px #781,0 0 33px #0909, 0 2.5px 0 #201",
-              lineHeight: "1.09",
-              filter: "drop-shadow(0 6px 22px #0008)",
+                "0 9px 36px #000b,0 2.5px 6px #c00d,0 0 65px #090a, 0 3px 0 #1301164c",
+              lineHeight: "1.05",
+              filter: "drop-shadow(0 8px 26px #0008)",
             }}
           >
             {slides[current].title}
@@ -267,12 +285,12 @@ function BannerSlider() {
           <div
             style={{
               color: "var(--text-secondary)",
-              fontSize: "1.23rem",
+              fontSize: "1.33rem",
               fontWeight: 400,
-              margin: "0 0 16px 2.5px",
+              margin: "0 0 22px 2.5px",
               maxWidth: 430,
-              lineHeight: "1.48",
-              textShadow: "0 1.5px 3px #000a",
+              lineHeight: "1.5",
+              textShadow: "0 2px 7px #000a",
             }}
           >
             {slides[current].description}
@@ -280,22 +298,23 @@ function BannerSlider() {
           <button
             className="btn btn-large"
             style={{
-              fontSize: "1.22rem",
+              fontSize: "1.25rem",
               fontWeight: 700,
               background:
-                "linear-gradient(90deg,var(--accent-color) 75%, #ea333d 100%)",
+                "linear-gradient(90deg,var(--accent-color) 82%, #ea333d 100%)",
               color: "var(--accent-contrast)",
               border: "none",
-              borderRadius: 6,
-              padding: "14px 38px 13px 26px",
-              marginTop: 2,
-              boxShadow: "0 4px 24px 0 rgba(229,9,20,0.17), 0 1px 7px #0009",
-              letterSpacing: 0.8,
+              borderRadius: 7,
+              padding: "15px 48px 14px 31px",
+              marginTop: 6,
+              boxShadow: "0 4px 24px 0 rgba(229,9,20,0.18), 0 2px 14px #0009",
+              letterSpacing: "0.9px",
               textShadow: "0 0.5px 3px #b10824bb",
               cursor: "pointer",
               outline: "none",
-              filter: "brightness(1.04)",
+              filter: "brightness(1.07)",
               transition: "background 0.17s, filter 0.17s",
+              borderBottom: "2px solid #930913",
             }}
             tabIndex={0}
           >
@@ -321,11 +340,11 @@ function BannerSlider() {
         style={{
           position: "absolute",
           left: "50%",
-          bottom: 34,
+          bottom: 46,
           transform: "translateX(-50%)",
           display: "flex",
-          gap: 21,
-          zIndex: 10,
+          gap: 23,
+          zIndex: 15,
         }}
       >
         {slides.map((_, idx) => (
@@ -339,17 +358,17 @@ function BannerSlider() {
               height: 12,
               background: idx === current
                 ? "var(--accent-color)"
-                : "rgba(229,9,20,0.28)",
+                : "#c11119a9",
               borderRadius: "50%",
-              border: "none",
+              border: 0,
               margin: 0,
-              outline: idx === current ? "2.5px solid var(--accent-contrast)" : "none",
+              outline: idx === current ? "3px solid #fff" : "none",
               boxShadow: idx === current
-                ? "0 0 16px 2px var(--accent-color), 0 0 3px 1.5px #fff5"
-                : "0 0px 4px 0px #0009",
-              opacity: idx === current ? 0.99 : 0.68,
+                ? "0 0 18px 2px var(--accent-color), 0 1px 6px 2.5px #fff7"
+                : "0 0px 5px 1.5px #0008",
+              opacity: idx === current ? 0.99 : 0.7,
               cursor: "pointer",
-              transition: "background 0.17s, outline 0.14s, box-shadow 0.16s, opacity 0.13s",
+              transition: "background 0.19s, outline 0.13s, box-shadow 0.17s, opacity 0.11s",
             }}
           />
         ))}
