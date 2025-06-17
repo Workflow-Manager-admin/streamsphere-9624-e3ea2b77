@@ -1,25 +1,28 @@
 import React from 'react';
 import Navbar from './Navbar';
 import SectionList from './SectionList';
+import BannerSlider from './BannerSlider';
 
 // PUBLIC_INTERFACE
 function MainContainer() {
   /**
    * MainContainer lays out the overall StreamSphere home page.
-   * Contains Navbar and section rails for content.
+   * Contains Navbar, a hero banner/slider, and section rails for content.
    */
   return (
     <>
       <Navbar />
+      {/* Banner/Hero section placed at the top */}
+      <BannerSlider />
 
-      {/* Section rails */}
+      {/* Content section rails */}
       <div
         className="container"
         style={{
           display: 'flex',
           flexDirection: 'column',
           gap: 64,
-          marginTop: 32,
+          marginTop: 24,
         }}
       >
         <div style={{
