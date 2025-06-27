@@ -11,6 +11,11 @@ This project provides a minimal React template with a clean, modern UI and minim
 
 ## Getting Started
 
+**Important Note for Deployment/Static Files:**
+> Modern Create React App (CRA v5+) no longer generates 'static/js/bundle.js'—the main JS file is now named with a unique hash (e.g., 'main.[hash].js').  
+> - Do **NOT** reference `/static/js/bundle.js` in any way; this will result in a 404 error.  
+> - Deployments/hosting MUST serve the full build directory as-is. Do not rewrite JS file paths or expect a 'bundle.js'.
+
 In the project directory, you can run:
 
 ### `npm start`

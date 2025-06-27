@@ -16,6 +16,9 @@
     <div id="root"></div>
     <!--
       Note: No direct reference to 'bundle.js' here—CRA will inject proper assets at build time.
+      WARNING: As of Create React App v5, the build no longer outputs '/static/js/bundle.js'.
+      Instead, a hashed main.js is generated automatically.
+      DO NOT hardcode or expect 'bundle.js'. Any such reference will fail with 404.
     -->
   </body>
 </html>
